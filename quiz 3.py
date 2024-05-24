@@ -28,10 +28,10 @@ data = response.json()
 
 if response.status_code == 200:
     for item in data['items']:
-        name = item['title']  # item.get('title', 'N/A')
-        crimes = item['description']  # item.get('description', 'N/A')
-        reward = item['reward_text']  # item.get('reward_text', 'No reward information')
-        picture = item['images'][0]['original']  # item.get('images', 'No image available')[0]['original']
+        name = item['title']
+        crimes = item['description']
+        reward = item['reward_text']
+        picture = item['images'][0]['original']
         print(f"Name: {name}\nCrimes: {crimes}\nReward: {reward}\nPicture URL: {picture}\n")
 else:
     print(f"Failed to fetch data. Status code: {response.status_code}")
