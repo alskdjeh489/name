@@ -1,23 +1,24 @@
 # **FBI Wanted Criminals API Data Fetcher**
+### **Project Description**
 
-მოცემული პითონის კოდი იღებს დეტალებს ძებნილი დამნაშავეების შესახებ FBI-ს საჯარო API-დან, json/dict ობიექტთან სამუშაო ფუნქციების მეშვეობით ბეჭდავს სასურველ ინფორმაციას, ინახავს მონაცემებს JSON ფორმატში და გადააქვს კონკრეტულ ინფორმაცია SQLite მონაცემთა ბაზაში.
+The FBI Wanted Criminals API Data Fetcher is a Python script designed to fetch data from the FBI's public API of wanted criminals. The script retrieves the data, saves it in a JSON file, prints specific information about each criminal, and stores the relevant details in an SQLite database.
 
-### **მახასიათებლები**
+### **Features**
 
-•	იღებს ძებნილ დამნაშავეთა სიას FBI-ს საჯარო API-დან.
+• Retrieves a list of wanted criminals from the FBI's public API.
 
-•	ბეჭდავს HTTP პასუხის დეტალებს, სტატუსის კოდს და სათაურებს.
+• Prints HTTP response details, url, status code and headers.
 
-•	ინახავს API პასუხს JSON ფორმატის ფაილში.
+• Stores the API response in a JSON format file.
 
-• ბეჭდავს დეტალებს თითოეული ძებნილი კრიმინალისთვის, მათ შორის მათი სახელის, დანაშაულის, ჯილდოს ოდენობისა და სურათის URL-ის ჩათვლით.
+• Prints details for each wanted criminal, including their name, crime, reward amount and image URL.
   
-•	ინახავს თითოეული კრიმინალის სახელს და დანაშაულს SQLite მონაცემთა ბაზაში.
+• Stores each criminal's name and crime in a SQLite database.
 
-### **მოთხოვნები**
+### **Requirements**
 
-•	requests ბიბლიოთეკა
+•	requests library
 
-•	json ბიბლიოთეკა
+•	json module
 
-•	sqlite3 ბიბლიოთეკა
+•	sqlite3 module
