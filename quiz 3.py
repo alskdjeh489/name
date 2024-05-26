@@ -1,21 +1,25 @@
+# FBI Wanted Criminals API Data Fetcher
+
+# Required libraries
 import requests
 import json
 import sqlite3
 
 
-# API-ს მონაცემები
+# API data
 url = "https://api.fbi.gov/@wanted"
 
 
-# Requests მოდულის ფუნქციები
+# Functions of the Requests module
 response = requests.get(url)
 
 print(response)
+print(response.url)
 print(response.status_code)
 print(response.headers)
 
 
-# json ფორმატის მონაცემების json ფაილში შენახვა
+# Saving data in json format to a json file
 print(json.dumps(response.json(), indent=4))
 
 file = open('data.json', 'w')
@@ -23,7 +27,7 @@ json.dump(response.json(), file, indent=4)
 file.close()
 
 
-# json/dict ობიექტთან სამუშაო ფუნქციების მეშვეობით სასურველი ინფორმაციის დაბეჭდვა
+# Printing the desired information through functions that work with the json/dict objects
 data = response.json()
 
 if response.status_code == 200:
@@ -37,7 +41,7 @@ else:
     print(f"Failed to fetch data. Status code: {response.status_code}")
 
 
-# სასურველი ინფორმაციის ბაზაში შენახვა
+# Storing the desired information in the sqlite3 database
 conn = sqlite3.connect('criminals.db')
 c = conn.cursor()
 
